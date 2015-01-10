@@ -52,11 +52,9 @@ public class ChatInputMethodView extends RelativeLayout {
         press_to_talk = findViewById(R.id.press_to_talk);
         add_icon = findViewById(R.id.add_icon);
         send_btn = findViewById(R.id.send_btn);
-
         inputText = (EditText) findViewById(R.id.txt_input);
         input_layout = findViewById(R.id.input_layout);
-
-
+        //测试
     }
 
 
