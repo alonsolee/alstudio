@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ALStudio.iml" filepath="$PROJECT_DIR$/ALStudio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ALStudioLib.iml" filepath="$PROJECT_DIR$/ALStudioLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AlstudioCommonView/AlstudioCommonView.iml" filepath="$PROJECT_DIR$/AlstudioCommonView/AlstudioCommonView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alstudiochatlib/alstudiochatlib.iml" filepath="$PROJECT_DIR$/alstudiochatlib/alstudiochatlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alstudioim/alstudioim.iml" filepath="$PROJECT_DIR$/alstudioim/alstudioim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
+

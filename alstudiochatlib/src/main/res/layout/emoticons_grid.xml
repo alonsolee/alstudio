@@ -1,0 +1,13 @@
+
+    <GridView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/emoticons_grid"
+        android:background="@android:color/white"
+        android:cacheColorHint="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:horizontalSpacing="0dip"
+        android:numColumns="7"
+        android:verticalSpacing="0dip" />
+

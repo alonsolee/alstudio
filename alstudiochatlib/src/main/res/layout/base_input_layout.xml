@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/base_input_layout_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_above="@+id/foot_parent"
+        android:id="@+id/touch_dismiss_layout"
+        android:orientation="horizontal"
+        android:layout_height="fill_parent"></LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/foot_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/foot_for_input"
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:id="@+id/footer_for_opt"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/keyboard_height"
+            android:layout_below="@+id/footer_layout"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
