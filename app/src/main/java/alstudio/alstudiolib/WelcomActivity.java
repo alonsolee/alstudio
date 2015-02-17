@@ -28,8 +28,6 @@ import alstudio.alstudiolib.module.xmpp.core.parser.iq.TaskCompleteNotifyParser;
 
 public class WelcomActivity extends BaseActivity implements ChatInputLayoutEngine.InputViewShowChangeListener {
 
-    private boolean isInited;
-
     private ListView list;
     private ChatListAdapter mAdapter;
 
@@ -60,35 +58,10 @@ public class WelcomActivity extends BaseActivity implements ChatInputLayoutEngin
         parentLayout = (RelativeLayout)findViewById(R.id.parent);
         emoticonsCover = (LinearLayout)findViewById(R.id.footer_for_emoticons);
 
-//        checkKeyboardHeight(parentLayout);
-
-//        ChatInputManager manager = new ChatInputManager();
-//        manager.init(this,(int)getResources().getDimension(
-//                R.dimen.keyboard_height));
-
-
-//        manager.setFootForOptBgColor(ALColorUtils.parseColor("#5191C2"));
-//        manager.attach(this);
 
         ChatManager.getInstance().createDefault(this,(int)getResources().getDimension(
                 R.dimen.keyboard_height));
-//        ChatManager.getInstance().attach(this);
         ChatManager.getInstance().attach(this,(ViewGroup)findViewById(R.id.input_container),this);
-
-
-//        TextMessage.Text msg = TextMessage.Text.newBuilder().setId(1).setName("alonsolee").build();
-
-
-//        try {
-//            TextMessage.Text p = TextMessage.Text.parseFrom(msg.toByteArray());
-//            System.out.println(p.getName()+" xxx ");
-//        } catch (InvalidProtocolBufferException e) {
-//            e.printStackTrace();
-//        }
-
-//        IMManager.getInstance().init(getApplicationContext(),new IMAccountManager(getApplicationContext()),null);
-//        IMManager.getInstance().login("alonsolee","2050528");
-
     }
 
     @Override
