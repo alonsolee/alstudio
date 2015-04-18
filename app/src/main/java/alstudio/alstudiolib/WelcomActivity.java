@@ -35,7 +35,6 @@ public class WelcomActivity extends BaseActivity implements ChatInputLayoutEngin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcom);
-        Log2SdCardUtils.getDefault().logToSD("测试日志");
         list = (ListView)findViewById(R.id.list);
 
         chats = new ArrayList<String>();
@@ -72,28 +71,6 @@ public class WelcomActivity extends BaseActivity implements ChatInputLayoutEngin
     @Override
     protected void onStart() {
         super.onStart();
-//        if(!isInited){
-//            isInited = true;
-//            if(IMManager.getInstance().getIMAccountManager().isLogined()){
-//                IMManager.getInstance().login();
-//            }else{
-//                Intent i = new Intent(this, LoginActivity.class);
-//                startActivity(i);
-//            }
-//        }
-
-        for(int i = 0;i<100;i++){
-            String sp = "xxxxxxxx "+i;
-            chats.add(sp);
-        }
-        mAdapter.notifyDataSetChanged();
-        new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                list.setSelection(list.getCount() - 1);
-            }
-        });
-
     }
 
     @Override
@@ -108,69 +85,7 @@ public class WelcomActivity extends BaseActivity implements ChatInputLayoutEngin
     private RelativeLayout parentLayout;
     private LinearLayout emoticonsCover;
 
-    int previousHeightDiffrence = 0;
 
-    /**
-     * change height of emoticons keyboard according to height of actual
-     * keyboard
-     *
-     * @param height
-     *            minimum height by which we can make sure actual keyboard is
-     *            open or not
-     */
-    private void changeKeyboardHeight(int height) {
-
-        if (height > 100) {
-            keyboardHeight = height;
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    LayoutParams.MATCH_PARENT, keyboardHeight);
-            emoticonsCover.setLayoutParams(params);
-        }
-
-    }
-
-    private void checkKeyboardHeight(final View parentLayout) {
-
-        parentLayout.getViewTreeObserver().addOnGlobalLayoutListener(
-                new ViewTreeObserver.OnGlobalLayoutListener() {
-
-                    @Override
-                    public void onGlobalLayout() {
-
-                        Rect r = new Rect();
-                        parentLayout.getWindowVisibleDisplayFrame(r);
-
-                        int screenHeight = parentLayout.getRootView()
-                                .getHeight();
-                        int heightDifference = screenHeight - (r.bottom);
-
-                        if (previousHeightDiffrence - heightDifference > 50) {
-                            emoticonsCover.setVisibility(View.GONE);
-                            System.out.println("键盘隐藏");
-                        }
-
-                        previousHeightDiffrence = heightDifference;
-                        if (heightDifference > 100) {
-
-//                            isKeyBoardVisible = true;
-                            changeKeyboardHeight(heightDifference);
-                            emoticonsCover.setVisibility(View.GONE);
-
-                            System.out.println("键盘显示" + heightDifference);
-
-
-                        } else {
-
-                            emoticonsCover.setVisibility(View.VISIBLE);
-//                            isKeyBoardVisible = false;
-                            System.out.println("键盘隐藏2");
-
-                        }
-
-                    }
-                });
-
-    }
 
     @Override
     public void handleIMConnectionEstablished() {
