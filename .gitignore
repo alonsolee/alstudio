@@ -1,8 +1,9 @@
+###文件夹过滤###
+build/
+*/build/
+.gradle/
+.idea/
+###类文件过滤###
 *.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
 *.iml
 local.properties
