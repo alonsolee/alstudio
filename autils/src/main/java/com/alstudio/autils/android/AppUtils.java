@@ -1,4 +1,4 @@
-package alstudio.alstudiolib.common.utils.android;
+package com.alstudio.autils.android;
 
 import android.app.Activity;
 import android.app.ActivityManager;

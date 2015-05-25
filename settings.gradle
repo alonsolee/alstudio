@@ -1,1 +1,1 @@
-include ':app', ':alstudioim', ':alstudiochatlib', ':AlstudioCommonView'
+include ':app', ':alstudioim', ':alstudiochatlib', ':AlstudioCommonView', ':com.alstudio.autils', ':autils'

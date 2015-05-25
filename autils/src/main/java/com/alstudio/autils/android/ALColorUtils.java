@@ -1,4 +1,4 @@
-package alstudio.alstudiolib.common.utils.android.color;
+package com.alstudio.autils.android;
 
 import android.content.Context;
 import android.graphics.Color;

@@ -1,9 +1,11 @@
-package alstudio.alstudiolib.common.utils.android;
+package com.alstudio.autils.android;
 
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Environment;
+import android.os.StatFs;
 import android.text.TextUtils;
 
 import java.io.BufferedInputStream;
@@ -31,6 +33,45 @@ import java.text.DecimalFormat;
 public class ALFileManager {
 
     private static final int DEFAULT_BUFFER_SIZE = 8192;
+
+
+    /**
+     * 获取SD卡可用空间
+     *
+     * @return
+     */
+    public static long getAvailableStorage() {
+        try {
+            StatFs stat = new StatFs(getExtStoragePath());
+            long avaliableSize = ((long) stat.getAvailableBlocks() * (long) stat
+                    .getBlockSize());
+            return avaliableSize;
+        } catch (RuntimeException ex) {
+            return 0;
+        }
+    }
+
+    /**
+     * 检测当前SD卡是否可用。
+     *
+     * @return true表示当前有可用的SD卡
+     */
+    public static boolean isExtStorageAvailable() {
+        return Environment.MEDIA_MOUNTED.equals(Environment
+                .getExternalStorageState());
+    }
+
+    /**
+     * 获取外部存储器绝对路径
+     *
+     * @return
+     */
+    public static String getExtStoragePath() {
+        if (isExtStorageAvailable()) {
+            return Environment.getExternalStorageDirectory().getAbsolutePath();
+        }
+        return null;
+    }
 
     /**
      * 创建文件
@@ -204,7 +245,7 @@ public class ALFileManager {
      *
      * @param src 目标源文件
      * @param dst 目标文件
-     * @throws java.io.IOException
+     * @throws IOException
      */
     public static void copyFile(File src, File dst) throws IOException {
         FileInputStream in = new FileInputStream(src);
@@ -233,7 +274,7 @@ public class ALFileManager {
      * @param input  输入inputstream
      * @param output 输出outputstream
      * @return 拷贝字节数
-     * @throws java.io.IOException
+     * @throws IOException
      */
     public static int copy(InputStream input, OutputStream output)
             throws IOException {
@@ -423,7 +464,7 @@ public class ALFileManager {
     /**
      * 格式化文件大小
      *
-     * @param file 待格式化的文件
+     * @param path 待格式化的文件
      * @return 格式化后的文件大小
      * @author Alonso Lee
      */

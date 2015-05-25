@@ -3,7 +3,6 @@ package alstudio.alstudiolib.module.xmpp.core;
 import java.util.HashMap;
 
 
-import alstudio.alstudiolib.common.log.ALLog;
 import alstudio.alstudiolib.module.xmpp.core.packact.ALIQ;
 import alstudio.alstudiolib.module.xmpp.core.parser.iq.IQPackageCallback;
 

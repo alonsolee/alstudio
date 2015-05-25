@@ -1,4 +1,4 @@
-package alstudio.alstudiolib.common.log;
+package com.alstudio.autils.log;
 
 import android.util.Log;
 
@@ -106,20 +106,6 @@ public class ALLog {
         }
     }
 
-    /**
-     * log.v
-     */
-    public void v(String msg) {
-        if (debug) {
-            String message = createMessage(msg);
-            String tag = getFileName();
-            if (tag != null) {
-                Log.v(tag, message);
-            } else {
-                Log.v(TAG, message);
-            }
-        }
-    }
 
     /**
      * log.d
@@ -136,61 +122,6 @@ public class ALLog {
         }
     }
 
-    /**
-     * log.e
-     */
-    public void e(String msg) {
-        if (debug) {
-            String message = createMessage(msg);
-            String tag = getFileName();
-            if (tag != null) {
-                Log.e(tag, message);
-            } else {
-                Log.e(TAG, message);
-            }
-        }
-    }
-
-    /**
-     * log.error
-     */
-    public void error(Exception e) {
-        if (debug) {
-            StringBuffer sb = new StringBuffer();
-            String name = getFunctionName();
-            StackTraceElement[] sts = e.getStackTrace();
-
-            if (name != null) {
-                sb.append(name + " - " + e + "\r\n");
-            } else {
-                sb.append(e + "\r\n");
-            }
-            if (sts != null && sts.length > 0) {
-                for (StackTraceElement st : sts) {
-                    if (st != null) {
-                        sb.append("[ " + st.getFileName() + ":"
-                                + st.getLineNumber() + " ]\r\n");
-                    }
-                }
-            }
-            e(sb.toString());
-        }
-    }
-
-    /**
-     * log.w
-     */
-    public void w(String msg) {
-        if (debug) {
-            String message = createMessage(msg);
-            String tag = getFileName();
-            if (tag != null) {
-                Log.i(tag, message);
-            } else {
-                Log.i(TAG, message);
-            }
-        }
-    }
 
     /**
      * set debug

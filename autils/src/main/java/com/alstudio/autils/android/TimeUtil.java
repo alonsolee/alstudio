@@ -1,4 +1,4 @@
-package alstudio.alstudiolib.common.utils.android;
+package com.alstudio.autils.android;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

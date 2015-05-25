@@ -1,8 +1,8 @@
 ###文件夹过滤###
+.idea/
 build/
 */build/
 .gradle/
-.idea/
 ###类文件过滤###
 *.class
 *.iml

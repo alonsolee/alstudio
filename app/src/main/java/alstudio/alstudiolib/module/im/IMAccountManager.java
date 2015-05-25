@@ -3,8 +3,9 @@ package alstudio.alstudiolib.module.im;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.alstudio.autils.android.ALSharedPreferencesManager;
+
 import alstudio.alstudioim.IMBaseAccountManager;
-import alstudio.alstudiolib.common.utils.android.ALSharedPreferencesManager;
 
 /**
  * Created by Alonso Lee on 2014/12/31.
@@ -23,7 +24,6 @@ public class IMAccountManager extends IMBaseAccountManager {
     public void saveIMAccount(String userName, String passWord) {
         spManager.putString(IM_SP_USER_NAME,userName);
         spManager.putString(IM_SP_PASS_WORD,passWord);
-        System.out.println("密码"+passWord+"账号"+userName);
     }
 
     @Override

@@ -1,9 +1,7 @@
 /**
  * 
  */
-package alstudio.alstudiolib.common.utils.android;
-
-import java.util.Set;
+package com.alstudio.autils.android;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -11,6 +9,8 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Build;
 import android.preference.PreferenceManager;
+
+import java.util.Set;
 
 /**
  * SharedPreferences存储管理器

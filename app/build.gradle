@@ -25,4 +25,5 @@ dependencies {
     compile project(':alstudioim')
     compile project(':alstudiochatlib')
     compile files('libs/android-support-v4.jar')
+    compile project(':autils')
 }

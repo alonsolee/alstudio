@@ -1,5 +1,9 @@
-package alstudio.alstudiolib.common.log;
+package com.alstudio.autils.log;
 
+
+import com.alstudio.autils.android.ALFileManager;
+import com.alstudio.autils.android.AndroidUtils;
+import com.alstudio.autils.android.TimeUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,8 +12,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 
-import alstudio.alstudiolib.common.utils.android.AndroidUtils;
-import alstudio.alstudiolib.common.utils.android.TimeUtil;
 
 /**
  * //Mylog类用于程序在运行期间的运行情况写到SD卡上以供开发人员查看。 本类提供
@@ -26,7 +28,7 @@ public class Log2SdCardUtils {
     public static final String WARN = "WARN"; // 警告
     public static final String ERROR = "ERROR"; // 错误
 
-    private String pathName = AndroidUtils.getExtStoragePath();
+    private String pathName = ALFileManager.getExtStoragePath();
     private OutputStreamWriter outputStreamWriter;
     private FileOutputStream stream = null;
 

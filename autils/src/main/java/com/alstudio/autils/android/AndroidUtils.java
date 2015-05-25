@@ -1,8 +1,7 @@
-package alstudio.alstudiolib.common.utils.android;
+package com.alstudio.autils.android;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.location.LocationManager;
@@ -18,12 +17,13 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 
+import com.alstudio.autils.encode.ALMd5;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Method;
 import java.util.Locale;
 
-import alstudio.alstudiolib.common.encode.ALMd5;
 
 /**
  * Android 常用工具类
@@ -32,43 +32,7 @@ import alstudio.alstudiolib.common.encode.ALMd5;
  */
 public class AndroidUtils {
 
-    /**
-     * 获取SD卡可用空间
-     *
-     * @return
-     */
-    public static long getAvailableStorage() {
-        try {
-            StatFs stat = new StatFs(getExtStoragePath());
-            long avaliableSize = ((long) stat.getAvailableBlocks() * (long) stat
-                    .getBlockSize());
-            return avaliableSize;
-        } catch (RuntimeException ex) {
-            return 0;
-        }
-    }
 
-    /**
-     * 检测当前SD卡是否可用。
-     *
-     * @return true表示当前有可用的SD卡
-     */
-    public static boolean isExtStorageAvailable() {
-        return Environment.MEDIA_MOUNTED.equals(Environment
-                .getExternalStorageState());
-    }
-
-    /**
-     * 获取外部存储器绝对路径
-     *
-     * @return
-     */
-    public static String getExtStoragePath() {
-        if (isExtStorageAvailable()) {
-            return Environment.getExternalStorageDirectory().getAbsolutePath();
-        }
-        return null;
-    }
 
     /**
      * 获取网络连接管理器实例对象

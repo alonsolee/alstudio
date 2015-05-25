@@ -1,14 +1,10 @@
 package alstudio.alstudiolib;
 
 import android.content.Context;
-import android.graphics.Rect;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.ViewTreeObserver;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -20,7 +16,6 @@ import java.util.ArrayList;
 import alstudio.alstudiochatlib.chat.ChatInputLayoutEngine;
 import alstudio.alstudiochatlib.chat.ChatManager;
 import alstudio.alstudiolib.common.activity.BaseActivity;
-import alstudio.alstudiolib.common.log.Log2SdCardUtils;
 import alstudio.alstudiolib.module.xmpp.core.packact.ALIQ;
 import alstudio.alstudiolib.module.xmpp.core.packact.ALIQType;
 import alstudio.alstudiolib.module.xmpp.core.parser.iq.TaskCompleteNotifyParser;

@@ -1,6 +1,7 @@
 package alstudio.alstudiolib.module.xmpp.core.parser.iq;
 
-import alstudio.alstudiolib.common.log.ALLog;
+import com.alstudio.autils.log.ALLog;
+
 import alstudio.alstudiolib.common.xml.parser.XmlParseCompleteCallback;
 import alstudio.alstudiolib.module.xmpp.core.packact.ALIQ;
 
